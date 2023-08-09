@@ -1,0 +1,36 @@
+h1, p, div, pre {
+  font-family: Lato;
+}
+
+.columns {
+  display: flex;
+  font-size: 12px;
+}
+
+.column {
+  border: 1px solid black;
+  margin: 6px;
+  overflow: auto;
+  width: 40%;
+  padding: 5px;
+}
+
+.string {
+  color: green;
+}
+.number {
+  color: darkorange;
+}
+.boolean {
+  color: blue;
+}
+.null {
+  color: magenta;
+}
+.key {
+  color: red;
+}
+
+.changed {
+  background-color: yellow;
+}
