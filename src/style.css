@@ -11,7 +11,7 @@ h1, p, div, pre {
   border: 1px solid black;
   margin: 6px;
   overflow: auto;
-  width: 40%;
+  width: 50%;
   padding: 5px;
 }
 
