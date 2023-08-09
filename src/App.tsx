@@ -5,17 +5,10 @@ import * as R from 'ramda';
 import { left, right } from './data';
 
 export default function App() {
-  const leftPaths = toPaths(left);
-  let newRight = R.clone(right);
+  const rightWithDiff = diff(left, right);
 
-  leftPaths.forEach((p) => {
-    if (R.path(p, left) !== R.path(p, right)) {
-      newRight = R.modifyPath(p, markAsChanged, newRight);
-    }
-  });
-
-  const original = syntaxHighlight(JSON.stringify(left, null, 2));
-  const changed = syntaxHighlight(JSON.stringify(newRight, null, 2));
+  const original = syntaxHighlight(stringify(left));
+  const changed = syntaxHighlight(stringify(rightWithDiff));
 
   return (
     <div>
@@ -29,6 +22,10 @@ export default function App() {
       </div>
     </div>
   );
+}
+
+function stringify(obj: object) {
+  return JSON.stringify(obj, null, 2)
 }
 
 function syntaxHighlight(json: string) {
@@ -72,6 +69,19 @@ function toPaths(value: object, stack = [], paths = []) {
     paths.push(stack);
   }
   return paths;
+}
+
+function diff(left: object, right: object) {
+  const leftPaths = toPaths(left);
+  let rightWithDiff = R.clone(right);
+
+  leftPaths.forEach((p) => {
+    if (R.path(p, left) !== R.path(p, right)) {
+      rightWithDiff = R.modifyPath(p, markAsChanged, rightWithDiff);
+    }
+  });
+
+  return rightWithDiff;
 }
 
 function markAsChanged(val: any) {
