@@ -16,21 +16,21 @@ h1, p, div, pre {
 }
 
 .string {
-  color: green;
+  color: #a31515;
 }
 .number {
-  color: darkorange;
+  color: #098658;
 }
 .boolean {
-  color: blue;
+  color: #0000ff;
 }
 .null {
-  color: magenta;
+  color: #0000ff;
 }
 .key {
-  color: red;
+  color: #0451a5;
 }
 
 .changed {
-  background-color: yellow;
+  background-color: #ffc628;
 }
