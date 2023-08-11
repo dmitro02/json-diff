@@ -14,23 +14,3 @@ h1, p, div, pre {
   width: 50%;
   padding: 5px;
 }
-
-.string {
-  color: #a31515;
-}
-.number {
-  color: #098658;
-}
-.boolean {
-  color: #0000ff;
-}
-.null {
-  color: #0000ff;
-}
-.key {
-  color: #0451a5;
-}
-
-.changed {
-  background-color: #ffc628;
-}
